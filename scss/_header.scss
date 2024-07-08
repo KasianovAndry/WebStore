@@ -1,0 +1,100 @@
+
+.header {
+   // .header__logo
+   font-size: 16px;
+   font-family: Roboto, sans-serif;
+   line-height: 1.6;
+   font-style: normal;
+   color: #fff;
+   font-weight: 600;
+   background-color: #000;
+   display: flex;
+   gap: 15px;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 15px;
+   position: sticky;
+   z-index: 5;
+   top: 0;
+   
+   &__logo-wrapper {
+      flex-grow: 1;
+   }
+   &__logo {
+      width: 70px;
+   }
+   // .header__categories-block
+   &__categories-block {
+      text-align: center;
+   }
+   // .header__categories-title
+   &__categories-title {
+      font-size: 18px;
+      font-weight: 700;
+      &:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+   // .header__categories-list
+   &__categories-list {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+   }
+   // .header__categoria-button
+   &__categoria-button {
+      
+      @media (any-hover:hover) {
+         &:hover.header__categoria-button--chosen {
+            cursor: default;
+         }
+         &:hover:not(.header__categoria-button--chosen) {
+            color: #EB5757;
+         }
+      }
+      // .header__categoria-button--chosen
+      &--chosen {
+         position: relative;
+         pointer-events: none;
+         &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #EB5757;
+         }
+      }
+   }
+   // .header__languages-changer
+   &__languages-changer {
+      display: flex;
+      gap: 10px;
+      align-self: flex-end;
+      flex-grow: 1;
+      justify-content: end;
+   }
+   // .header__language-button
+   &__language-button {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.2s;
+      @media (any-hover:hover) {
+         &:hover {
+            transform: scale(1.1);
+         }
+      }
+      // .header__language-button--ukrainian
+      &--ukrainian {
+         background: url("../img/icons/language-icon-ukrainian.png") center / contain no-repeat;
+      }
+      // .header__language-button--english
+      &--english {
+         background: url("../img/icons/language-icon-english.png") center / contain no-repeat;
+      }
+   }
+}
+
+
